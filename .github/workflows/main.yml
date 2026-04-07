@@ -23,4 +23,4 @@ jobs:
           context: .
           push: true
           # ВАЖНО: здесь твой ник
-          tags: saksak2003-coder/my-express-app:latest 
+          tags: artem0005/my-express-app:latest 
