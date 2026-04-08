@@ -24,4 +24,4 @@ jobs:
           context: .
           push: true
           # Используем твой логин и имя репозитория
-          tags: saksak2003-coder/my-express-app:latest
+          tags: artem0005/my-express-app:latest 
