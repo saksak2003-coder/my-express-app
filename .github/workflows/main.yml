@@ -1,8 +1,9 @@
-name: CI/CD Pipeline
+name: Release to Docker Hub
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main # При пуше в ветку main
 
 jobs:
   build-and-push:
@@ -11,16 +12,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Login to Docker Hub
+      - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          # ВАЖНО: здесь твой ник
-          tags: artem0005/my-express-app:latest 
+          # Используем твой логин и имя репозитория
+          tags: saksak2003-coder/my-express-app:latest
